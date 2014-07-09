@@ -47,7 +47,7 @@ class GenreItems extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getGenres()
+    public function getGenre()
     {
         return $this->hasOne(Genre::className(), ['ID' => 'IDGenre']);
     }

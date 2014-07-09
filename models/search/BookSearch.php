@@ -13,6 +13,7 @@ use app\models\Book;
 class BookSearch extends Book
 {
     public $multi_search;
+    public $alternative;
 
     /**
      * @inheritdoc
@@ -21,7 +22,7 @@ class BookSearch extends Book
     {
         return [
             [['ID', 'file_size', 'Seq', 'zip'], 'integer'],
-            [['title', 'lang', 'annotation', 'filename', 'date', 'full_path', 'Created', 'srclang', 'keywords', 'FileDate', 'SeqNum', 'multi_search'], 'safe'],
+            [['title', 'lang', 'annotation', 'filename', 'date', 'full_path', 'Created', 'srclang', 'keywords', 'FileDate', 'SeqNum', 'multi_search', 'alternative'], 'safe'],
         ];
     }
 
@@ -47,14 +48,29 @@ class BookSearch extends Book
         ]);
 
         $query->joinWith('autors');
-        $query->joinWith('genreItems.genres');
+        $query->joinWith('genreItems.genre');
+        $query->distinct();
         if (!($this->load($params) && $this->validate())) {
             return $dataProvider;
         }
 
-        $query->andFilterWhere(['like', 'title', $this->title])
-            ->orFilterWhere(['like', 'autors.first-name', $this->multi_search])
-            ->orFilterWhere(['like', 'Genre.Name', $this->multi_search]);
+        if ($this->alternative) {
+            $elements = explode(' ', $this->multi_search);
+            foreach ($elements as $element) {
+                $query->orFilterWhere(['like', 'book.title', $element])
+                    ->orFilterWhere(['like', 'Genre.Name', $element])
+                    ->orFilterWhere(['like', 'autors.first_name', $element])
+                    ->orFilterWhere(['like', 'autors.last_name', $element])
+                    ->orFilterWhere(['like', 'autors.middle_name', $element]);
+            }
+        } else {
+            $query->orFilterWhere(['like', 'book.title', $this->multi_search])
+                ->orFilterWhere(['like', 'Genre.Name', $this->multi_search])
+                ->orFilterWhere(['like', 'autors.first_name', $this->multi_search])
+                ->orFilterWhere(['like', 'autors.last_name', $this->multi_search])
+                ->orFilterWhere(['like', 'autors.middle_name', $this->multi_search]);
+        }
+
         return $dataProvider;
     }
 }

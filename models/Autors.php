@@ -9,9 +9,9 @@ use Yii;
  *
  * @property integer $ID
  * @property integer $IDBook
- * @property string $first-name
- * @property string $last-name
- * @property string $middle-name]
+ * @property string $first_name
+ * @property string $last_name
+ * @property string $middle_name
  */
 class Autors extends \yii\db\ActiveRecord
 {
@@ -31,7 +31,7 @@ class Autors extends \yii\db\ActiveRecord
         return [
             [['IDBook'], 'required'],
             [['IDBook'], 'integer'],
-            [['first-name', 'last-name', 'middle-name]'], 'string', 'max' => 100]
+            [['first_name', 'last_name', 'middle_name'], 'string', 'max' => 100]
         ];
     }
 
@@ -43,9 +43,9 @@ class Autors extends \yii\db\ActiveRecord
         return [
             'ID' => 'ID',
             'IDBook' => 'Idbook',
-            'first-name' => 'First Name',
-            'last-name' => 'Last Name',
-            'middle-name]' => 'Middle Name]',
+            'first_name' => 'First Name',
+            'last_name' => 'Last Name',
+            'middle_name' => 'Middle Name',
         ];
     }
 }

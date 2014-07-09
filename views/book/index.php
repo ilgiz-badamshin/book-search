@@ -14,11 +14,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('Create Book', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
 //        'filterModel' => $searchModel,
@@ -28,8 +23,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'ID',
             'title',
             'lang',
-            'annotation:ntext',
-            'filename',
+            'autorsText',
+            'genresText',
+//            'annotation:ntext',
+//            'filename',
             // 'date',
             // 'full_path',
             // 'file_size',
@@ -41,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'FileDate',
             // 'SeqNum',
 
-            ['class' => 'yii\grid\ActionColumn'],
+//            ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 

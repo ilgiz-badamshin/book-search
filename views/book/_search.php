@@ -18,6 +18,7 @@ use yii\widgets\ActiveForm;
     <?php // $form->field($model, 'ID') ?>
 
     <?= $form->field($model, 'multi_search') ?>
+    <?= $form->field($model, 'alternative')->checkbox() ?>
 
     <?php // $form->field($model, 'lang') ?>
 

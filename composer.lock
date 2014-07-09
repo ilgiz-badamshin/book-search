@@ -1,10 +1,9 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
-        "This file is @generated automatically"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "5d101defbce4f38e0619868fbe3e7e88",
+    "hash": "e63f085268c5de8809469d54c983529f",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -109,6 +108,37 @@
                 "html"
             ],
             "time": "2013-11-30 08:25:19"
+        },
+        {
+            "name": "keboola/csv",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/keboola/php-csv.git",
+                "reference": "113735ad9f4f7e0ef5545ebfb5fcd62528035841"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/keboola/php-csv/zipball/113735ad9f4f7e0ef5545ebfb5fcd62528035841",
+                "reference": "113735ad9f4f7e0ef5545ebfb5fcd62528035841",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Keboola\\Csv": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Keboola CSV reader and writer",
+            "homepage": "http://keboola.com",
+            "time": "2014-01-31 14:10:34"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -270,12 +300,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "210dca296251ec7f384c2a53ef16d1a4560985dd"
+                "reference": "927c34d8628f366718f3fdeb97c92bcdf75798cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/210dca296251ec7f384c2a53ef16d1a4560985dd",
-                "reference": "210dca296251ec7f384c2a53ef16d1a4560985dd",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/927c34d8628f366718f3fdeb97c92bcdf75798cb",
+                "reference": "927c34d8628f366718f3fdeb97c92bcdf75798cb",
                 "shasum": ""
             },
             "require": {
@@ -343,7 +373,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2014-07-09 00:37:53"
+            "time": "2014-07-09 13:23:47"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -646,17 +676,11 @@
             "time": "2014-07-08 12:59:15"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [
-
-    ],
+    "stability-flags": [],
     "platform": {
         "php": ">=5.4.0"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }
