@@ -1,4 +1,4 @@
-Требования: php не ниже dthcbb 5.4
+Требования: php не ниже версии 5.4
 
 Нужно установить composer:
 Инструкция тут: [getcomposer.org](https://getcomposer.org/download/), или коротко
