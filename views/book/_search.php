@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\jui\AutoComplete;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -17,7 +18,17 @@ use yii\widgets\ActiveForm;
 
     <?php // $form->field($model, 'ID') ?>
 
-    <?= $form->field($model, 'multi_search') ?>
+    <?=
+    $form->field($model, 'multi_search')->widget(AutoComplete::className(), [
+        'options' => [
+            'class' => 'form-control',
+        ],
+        'clientOptions' => [
+            'source' => "/book/auto-complete",
+            'minLength' => 2,
+        ]
+    ]) ?>
+
     <?= $form->field($model, 'alternative')->checkbox() ?>
 
     <?php // $form->field($model, 'lang') ?>

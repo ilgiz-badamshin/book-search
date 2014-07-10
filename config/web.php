@@ -6,6 +6,7 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'defaultRoute' => '/book',
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',

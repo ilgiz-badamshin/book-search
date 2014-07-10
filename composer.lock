@@ -1,9 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "e63f085268c5de8809469d54c983529f",
+    "hash": "90d3b7c01f852457c4cfb1dd4f749ddf",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -200,12 +201,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "ddee04038f946ac103eb4e70c8eb7adeb2cf563b"
+                "reference": "94472ee74ac6732a3abd0d32ad5c3a68370090c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/ddee04038f946ac103eb4e70c8eb7adeb2cf563b",
-                "reference": "ddee04038f946ac103eb4e70c8eb7adeb2cf563b",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/94472ee74ac6732a3abd0d32ad5c3a68370090c0",
+                "reference": "94472ee74ac6732a3abd0d32ad5c3a68370090c0",
                 "shasum": ""
             },
             "replace": {
@@ -243,7 +244,7 @@
                 "responsive",
                 "web"
             ],
-            "time": "2014-07-08 03:44:43"
+            "time": "2014-07-10 07:03:24"
         },
         {
             "name": "yiisoft/jquery",
@@ -300,12 +301,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "927c34d8628f366718f3fdeb97c92bcdf75798cb"
+                "reference": "fa821d6d778c85c0c8491ef5bb356f029525851d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/927c34d8628f366718f3fdeb97c92bcdf75798cb",
-                "reference": "927c34d8628f366718f3fdeb97c92bcdf75798cb",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/fa821d6d778c85c0c8491ef5bb356f029525851d",
+                "reference": "fa821d6d778c85c0c8491ef5bb356f029525851d",
                 "shasum": ""
             },
             "require": {
@@ -373,7 +374,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2014-07-09 13:23:47"
+            "time": "2014-07-09 21:17:35"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -463,6 +464,49 @@
                 "yii2"
             ],
             "time": "2014-07-03 12:33:09"
+        },
+        {
+            "name": "yiisoft/yii2-jui",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-jui.git",
+                "reference": "c0ad53d31327991b5cecd008c807902a9abc4d3b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-jui/zipball/c0ad53d31327991b5cecd008c807902a9abc4d3b",
+                "reference": "c0ad53d31327991b5cecd008c807902a9abc4d3b",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "yii\\jui\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Qiang Xue",
+                    "email": "qiang.xue@gmail.com",
+                    "homepage": "http://www.yiiframework.com/",
+                    "role": "Founder and project lead"
+                }
+            ],
+            "description": "The Jquery UI extension for the Yii framework",
+            "keywords": [
+                "jQuery UI",
+                "renderer",
+                "yii2"
+            ],
+            "time": "2014-06-23 01:46:25"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
@@ -636,12 +680,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "7726fb52f1ba5680c21cd9e586a23ea88908101d"
+                "reference": "b42d638192bb9b4b7d7e73e747dfcda9db4d9985"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/7726fb52f1ba5680c21cd9e586a23ea88908101d",
-                "reference": "7726fb52f1ba5680c21cd9e586a23ea88908101d",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/b42d638192bb9b4b7d7e73e747dfcda9db4d9985",
+                "reference": "b42d638192bb9b4b7d7e73e747dfcda9db4d9985",
                 "shasum": ""
             },
             "require": {
@@ -673,14 +717,20 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2014-07-08 12:59:15"
+            "time": "2014-07-09 23:54:30"
         }
     ],
-    "aliases": [],
+    "aliases": [
+
+    ],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": [
+
+    ],
     "platform": {
         "php": ">=5.4.0"
     },
-    "platform-dev": []
+    "platform-dev": [
+
+    ]
 }

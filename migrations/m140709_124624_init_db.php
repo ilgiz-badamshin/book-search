@@ -140,7 +140,7 @@ class m140709_124624_init_db extends Migration
 
         echo "import start...";
 
-        Book::import();
+        Book::import(10000);
         echo "import done\n";
     }
 

@@ -123,7 +123,7 @@ class Book extends \yii\db\ActiveRecord
     /**
      * Импортирует книги из файла
      */
-    public static function import()
+    public static function import($max_rows)
     {
         $index_last_name = 0;
         $index_first_name = 1;
@@ -140,52 +140,59 @@ class Book extends \yii\db\ActiveRecord
         $genre_id = 1;
         $genre_max = Genre::find()->count();
         $saved_books = [];
+        $imported = 0;
         foreach ($csvFile as $key => $row) {
-            try{
-            if (empty($row[$index_first_name])) {
-                continue;
-            }
-            $title = $row[$index_title];
-            if (isset($saved_books[$title])) {
-                $book_id = $saved_books[$title];
-            } else {
-                $book = new Book();
-                $book->title = $title;
-                $book->filename = 'fake_filename';
-                $book->full_path = 'fake_full_path';
-                $book->file_size = 0;
-                $book->Created = date('Y-m-d H:i:s');
-                $book->zip = 0;
-                $book->lang = $row[$index_language];
-                $book->save();
+            try {
+                if (empty($row[$index_first_name])) {
+                    continue;
+                }
+                $title = $row[$index_title];
+                if (isset($saved_books[$title])) {
+                    $book_id = $saved_books[$title];
+                } else {
+                    $book = new Book();
+                    $book->title = $title;
+                    $book->filename = 'fake_filename';
+                    $book->full_path = 'fake_full_path';
+                    $book->file_size = 0;
+                    $book->Created = date('Y-m-d H:i:s');
+                    $book->zip = 0;
+                    $book->lang = $row[$index_language];
+                    $book->save();
 
-                $book_id = $book->ID;
-                $saved_books[$title] = $book_id;
-            }
+                    $book_id = $book->ID;
+                    $saved_books[$title] = $book_id;
+                }
 
 
-            $autor = new Autors();
-            $autor->first_name = $row[$index_first_name];
-            $autor->middle_name = $row[$index_middle_name];
-            $autor->last_name = $row[$index_last_name];
-            $autor->IDBook = $book_id;
-            $autor->save();
+                $autor = new Autors();
+                $autor->first_name = $row[$index_first_name];
+                $autor->middle_name = $row[$index_middle_name];
+                $autor->last_name = $row[$index_last_name];
+                $autor->IDBook = $book_id;
+                $autor->save();
 
-            $gi = new GenreItems();
-            $gi->IDBook = $book_id;
-            $gi->IDGenre = $genre_id++;
-            $gi->save();
-            if ($genre_id > $genre_max) {
-                $genre_id = 1;
+                $gi = new GenreItems();
+                $gi->IDBook = $book_id;
+                $gi->IDGenre = $genre_id++;
+                $gi->save();
+                if ($genre_id > $genre_max) {
+                    $genre_id = 1;
+                }
+                if ($key % 1000 == 0) {
+                    echo "Обработано $key строк...\n";
+                }
+            } catch (Exception $e) {
+                return false;
             }
-            if ($key % 1000 == 0) {
-                echo "Импортировано $key записей...\n";
-            }
-            }catch (Exception $e){
-                var_dump($row);
-                var_dump($key);
+
+            $imported++;
+            if (!empty($max_rows) && ($imported >= $max_rows)) {
                 return true;
             }
+
         }
+
+        return true;
     }
 }
